@@ -1,0 +1,24 @@
+{
+  "name": "file-upload.js",
+  "version": "1.0.0",
+  "description": "The plugin about file upload for front end",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "testUpload": "node test/testServer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zysj/file-upload.js.git"
+  },
+  "keywords": [
+    "file",
+    "upload"
+  ],
+  "author": "zysj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zysj/file-upload.js/issues"
+  },
+  "homepage": "https://github.com/zysj/file-upload.js#readme"
+}
