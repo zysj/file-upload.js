@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>上传控件测试</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <input id="file" type="file" name="file" multiple="true" onchange="change()"/>上传文件
+        <div contenteditable="true" id="edit" style="width:300px;height:300px">
+
+        </div>
+    </body>
+    <script src="../fileUpload.js"></script>
+    <script>
+        window.onload = function(){
+            var file = document.getElementById('file');
+            var upload = new FileUpload({
+                url:"http://localhost:12000/node/upload/uploadImg",
+                el:file,
+                params:{
+                    'ss':{'dddd':'rrr'}
+                },
+                filters:[function(file){
+                    console.log(file);
+                    return file.size<600000
+                }]
+            });
+
+            upload.onProgressUpload = function(event){
+                console.log(event);
+                // upload.xhr.abort();
+            }
+
+            change = function(){
+                console.log(upload,file.files);
+                upload.upload();
+            }
+        }
+    </script>
+</html>

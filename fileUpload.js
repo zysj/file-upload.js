@@ -1,10 +1,10 @@
 (function(factory,window){
     var w = window;
-    if(!w)return;
+    if(!w || !w.document)return;
     if(typeof module === 'object' && typeof module.exports === 'object'){
         return (module.exports === factory(w));
     }
-    factory(w);
+    return factory(w); 
 
 })(function(window){
 
